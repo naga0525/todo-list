@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import "./Todo.css";
+import "./todo.css";
 
-function Todo({ todo, remove, update, toggleComplete }) {
+function todo({ todo, remove, update, toggleComplete }) {
   const [isEditing, setIsEditing] = useState(false);
   const [task, setTask] = useState(todo.task);
 
@@ -27,8 +26,8 @@ function Todo({ todo, remove, update, toggleComplete }) {
   let result;
   if (isEditing) {
     result = (
-      <div className="Todo">
-        <form className="Todo-edit-form" onSubmit={handleUpdate}>
+      <div className="todo">
+        <form className="todo-edit-form" onSubmit={handleUpdate}>
           <input onChange={handleChange} value={task} type="text" />
           <button>Save</button>
         </form>
@@ -36,15 +35,15 @@ function Todo({ todo, remove, update, toggleComplete }) {
     );
   } else {
     result = (
-      <div className="Todo">
+      <div className="todo">
         <li
           id={todo.id}
           onClick={toggleCompleted}
-          className={todo.completed ? "Todo-task completed" : "Todo-task"}
+          className={todo.completed ? "todo-task completed" : "todo-task"}
         >
           {todo.task}
         </li>
-        <div className="Todo-buttons">
+        <div className="todo-buttons">
           <button onClick={toggleFrom}>
             <i className="fas fa-pen" />
           </button>
@@ -58,4 +57,4 @@ function Todo({ todo, remove, update, toggleComplete }) {
   return result;
 }
 
-export default Todo;
+export default todo;

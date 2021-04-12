@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import Todo from "./todoList";
-import NewTodoForm from "./newTodoForm";
+import Todo from "./todo";
+import AddTodoForm from "./addTodoForm";
 import { v4 as uuidv4 } from 'uuid';
 import "./todoList.css";
 
@@ -11,9 +10,8 @@ function TodoList() {
     { id: uuidv4(), task: "task 2", completed: true }
   ]);
 
-  const create = newTodo => {
-    console.log(newTodo);
-    setTodos([...todos, newTodo]);
+  const create = addTodo => {
+    setTodos([...todos, addTodo]);
   };
 
   const remove = id => {
@@ -51,12 +49,13 @@ function TodoList() {
   ));
 
   return (
-    <div className="TodoList">
-      <h1>
-        Todo List <span>A simple React Todo List App</span>
-      </h1>
+    <div className="list">
+      <h2>
+        React Todo List App
+      </h2>
+      <hr />
       <ul>{todosList}</ul>
-      <NewTodoForm createTodo={create} />
+      <AddTodoForm createTodo={create} />
     </div>
   );
 }

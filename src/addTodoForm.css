@@ -1,0 +1,44 @@
+.addTodoForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addTodoForm label {
+  min-width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.addTodoForm input {
+  flex-grow: 1;
+  border: none;
+  background: #f7f1f1;
+  padding: 0 1.5em;
+  font-size: initial;
+}
+
+.addTodoForm button {
+  padding: 0 1.3rem;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  transform: background 0.2s ease-out;
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.addTodoForm input,
+.addTodoForm button {
+  font-family: "Quicksand", sans-serif;
+  height: 3rem;
+}
